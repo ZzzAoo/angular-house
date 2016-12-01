@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="public/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="styles/main.css" />
+    <!--<script src="public/jquery/dist/jquery.js"></script>-->
+    <link rel="stylesheet" href="styles/fileinput.css"/>
+    <script src="public/resources/jquery2.24.js"></script>
+    <script src="public/resources/fileinput.js"></script>
+  </head>
+  <body>
+    <!--[if lte IE 8]>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div  id="yoAngularApp" ng-app="yoAngularApp">
+    <!-- Add your site or application content here -->
+    <div class="header">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#/">精点VR</a>
+          </div>
+          <div class="collapse navbar-collapse pull-right" id="js-navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li><a ui-sref="index">主页</a></li>
+              <li><a ui-sref="project">项目管理</a></li>
+              <li><a ui-sref="scene">场景管理</a></li>
+              <li><a data-toggle="#myModal" data-target="#myModal">个人中心</a></li>
+              <li><a ui-sref="index">登录/注册</a></li>
+              <li><a ui-sref="test">测试</a></li>
+              <!--<li><p data-toggle="#myModal" data-target="#myModal">33</p></li>-->
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+      <!--<p><a class="btn btn-lg btn-success pull-right" data-toggle="modal" data-target="#myModal"-->
+            <!--ng-click="modal='views/template/loginTemplate.html'">新增项目<span class="glyphicon glyphicon-plus"></span></a></p>-->
+      <div class="container">
+         <div ui-view="content"></div>
+      </div>
+
+      <div class="footer">
+        <div class="container">
+          <p><span class="glyphicon glyphicon-heart"></span>&nbsp;&nbsp;深圳精点科技</p>
+        </div>
+      </div>
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×
+              </button>
+              <!--<h4 class="modal-title" id="myModalLabel">-->
+                <!--项目管理-->
+              <!--</h4>-->
+              <h4>
+                <i class="glyphicon glyphicon-user">
+                </i>
+                用户登录
+              </h4>
+            </div>
+            <div class="modal-body">
+              <div ng-include='modal' scope="" onload=""></div>
+              <!--<div ng-include="'views/template/loginTemplate.html'"></div>-->
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+    </div>
+
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+     <script>
+       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
+       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
+       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
+       }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+       ga('create', 'UA-XXXXX-X');
+       ga('send', 'pageview');
+    </script>
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+
+    <script src="public/angular/angular.js"></script>
+    <!--<script src="public/jquery/dist/jquery.js"></script>-->
+    <script src="public/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="public/angular-animate/angular-animate.js"></script>
+    <script src="public/angular-cookies/angular-cookies.js"></script>
+    <script src="public/angular-resource/angular-resource.js"></script>
+    <script src="public/angular-ui-router/release/angular-ui-router.js"></script>
+    <!--<script src="public/angular-route/angular-route.js"></script>-->
+    <script src="public/angular-sanitize/angular-sanitize.js"></script>
+    <script src="public/angular-touch/angular-touch.js"></script>
+    <script src="public/oclazyload/dist/ocLazyLoad.min.js"></script>
+    <script src="public/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <!--<script src="scripts/resources/fileinput.js"></script>-->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/controllers/about.js"></script>
+    <!--<script>-->
+      <!--$(function(){-->
+        <!--$(".file").fileinput({-->
+          <!--language: "zh",-->
+          <!--maxFileSize: 30240,-->
+          <!--uploadUrl:'/index.php/Home/Index/img',-->
+          <!--allowedFileExtensions: ["jpg","jpeg"],-->
+          <!--uploadAsync: true,-->
+          <!--showPreview: false,-->
+          <!--allowedFileExtensions : ['jpg', 'jpeg'],-->
+          <!--elErrorContainer: '#errorBlock'-->
+        <!--});-->
+      <!--});-->
+    <!--</script>-->
+</body>
+</html>

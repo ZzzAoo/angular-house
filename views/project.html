@@ -1,0 +1,77 @@
+<form action="/index.php" class="form-horizontal"  method="post" onsubmit="return check();">
+  <!--<form action="/project/projectAdd" class="form-horizontal"  method="post">-->
+  <input type="hidden" value="" name="projectId" id="projectId">
+  <div class="form-group" ng-controller="areaController">
+    <label for="proName" class="control-label col-sm-1">省份</label>
+    <div class="col-md-2">
+      <select name="repeatSelect" class="form-control" id="repeatSelect" ng-model="province.repeatSelect"
+              ng-change="showSelect(province.repeatSelect)">
+        <option ng-repeat="option in province.result" name="proCity" value="{{option.code}}">{{option.name}}</option>
+      </select>
+    </div>
+
+    <label class="control-label col-sm-1">市</label>
+    <div class="col-md-2">
+      <select class="form-control" name="proArea" ng-model="city[0]" ng-options="d.name for d in city">
+      </select>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-1 control-label">楼盘名称</label>
+    <div class="col-md-5">
+      <input class="form-control" id="proName" name="proName" type="text" placeholder="楼盘名称"/>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-1 control-label">楼盘类型</label>
+    <div class="col-sm-3">
+      <div class="checkbox">
+        <label><input type="checkbox" value="0" name="proType" checked="checked">住宅</label>
+        <label><input type="checkbox" value="1" name="proType">商业</label>
+        <label><input type="checkbox" value="2" name="proType">旅游</label>
+        <label><input type="checkbox" value="3" name="proType">海外</label>
+      </div>
+    </div>
+    <label class="col-sm-1 control-label">楼盘状态</label>
+    <div class="col-sm-3">
+      <div class="checkbox">
+        <label><input type="checkbox" value="0" name="proState" checked="checked">代售</label>
+        <label><input type="checkbox" value="1" name="proState">在售</label>
+        <label><input type="checkbox" value="2" name="proState">售完</label>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-1 control-label">参考价格</label>
+    <div class="col-md-2">
+      <input class="form-control" id="proPrice" name="proPrice" type="text" placeholder="参考价格"/>
+    </div>
+    <label class="col-sm-1 control-label">项目特色</label>
+    <div class="col-md-3">
+      <input class="form-control" id="proFeature" name="proFeature" type="text" placeholder="项目特色"/>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-1 control-label">咨询电话</label>
+    <div class="col-md-2">
+      <input class="form-control" id="proTel" name="proTel"  type="text" placeholder="咨询电话"/>
+    </div>
+    <label class="col-sm-1 control-label">在售户型</label>
+    <div class="col-md-3">
+      <input class="form-control" id="proInSale" name="proInSale" type="text" placeholder="在售户型"/>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-1 control-label">楼盘介绍</label>
+    <div class="col-md-6">
+      <textarea class="form-control" id="proInfo" name="proInfo" rows="5"></textarea>
+    </div>
+  </div>
+
+  <div class="form-group col-sm-7">
+    <div class="center-block" style="display: flex;justify-content: center">
+      <button type="submit"  class="btn btn-default col-sm-2">添加</button>&nbsp;&nbsp;&nbsp;
+      <button type="button" class="btn btn-default col-sm-2">重置</button>
+    </div>
+  </div>
+</form>

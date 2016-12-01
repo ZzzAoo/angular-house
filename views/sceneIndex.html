@@ -1,0 +1,63 @@
+<div class="container table-responsive">
+  <!--<p><a class="btn btn-lg btn-success pull-right" data-toggle="modal" data-target="#myModal"-->
+        <!--ng-click="goModal(9090)">场景管理<span class="glyphicon glyphicon-plus"></span></a></p>-->
+  <p><a class="btn btn-md btn-success pull-right" ui-sref=".sceneManger">
+    场景管理<span class="glyphicon glyphicon-plus"></span></a></p>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>场景名称</th>
+        <th>图片类型</th>
+        <th>上传时间</th>
+        <th>文件大小</th>
+        <th>项目封面</th>
+        <th>分享</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="project in dataList">
+        <td ng-hide="true">{{project.sceneid}}</td>
+        <td>{{project.scenename}}</td>
+        <td>{{project.imgtype}}</td>
+        <td>{{project.addtime}}</td>
+        <td>{{project.imgsize}} </td>
+        <td> 封面 </td>
+        <td> 分享 </td>
+        <td class="do">
+          <!--<a class="btn btn-sm btn-success" data-toggle="modal" data-target="#myModal">创建</a>-->
+          <!--<a class="btn btn-sm btn-success" data-toggle="modal" data-target="#myModal" ng-click='goModal(project.sceneid)'>管理</a>-->
+          <a class="btn btn-sm btn-success" ng-href="#/scene/sceneManager/{{project.sceneid}}">管理</a>
+          <a class="btn btn-sm btn-success" data-toggle="modal" data-target="#myModal">删除</a>
+          <!--<a href="/project/operation/delete/{{project.proId}}">删除</a>-->
+        </td>
+    </tr>
+    </tbody>
+</table>
+    <div ui-view=""></div>
+</div>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×
+        </button>
+        <h4 class="modal-title" id="myModalLabel">
+          场景管理
+        </h4>
+      </div>
+      <div class="modal-body">
+        <!--<div ng-include='modal' scope="" onload=""></div>-->
+        <div ng-include="'views/template/sceneAddTemplate.html'"></div>
+      </div>
+      <div class="modal-footer ">
+        <button type="button" class="btn btn-primary">添加
+        </button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消
+        </button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<script src="scripts/controllers/sceneController.js"></script>

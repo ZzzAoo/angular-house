@@ -1,0 +1,86 @@
+<h3>{{title}}</h3>
+<form action="/index.php" class="form-horizontal"  method="post" onsubmit="return check();">
+  <input type="text" ng-hide="true"  ng-model="scene.sceneid"  class="col-sm-3"/>
+  <div class="form-group">
+    <label class="control-label col-sm-2">场景类别</label>
+    <div class="col-sm-3">
+      <!--<select name="repeatSelect" class="form-control" ng-model="scene.scenetype">-->
+        <!--<option ng-repeat="option in scene" name="scenetype" value="{{scene.type}}">{{scene.type}}</option>-->
+      <!--</select>-->
+      <select class="form-control" name="scenename">
+         <option value="0">室外场景</option>
+        <option value="1">室内场景</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-2">所属项目</label>
+    <div class="col-sm-3">
+      <select name="repeatSelect" class="form-control" id="repeatSelect" ng-model="project.repeatSelect">
+        <option ng-repeat="option in project.result" value="{{option.proid}}">{{option.proname}}</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">场景名称</label>
+    <div class="col-sm-3">
+      <input class="form-control" id="sceneName" type="text" ng-model="scene.scenename" placeholder="场景名称" />
+    </div>
+  </div>
+
+  <!--<div class="form-group">-->
+    <!--<label class="col-sm-2 control-label">楼盘类型</label>-->
+    <!--<div class="col-md-4">-->
+      <!--<div class="checkbox">-->
+        <!--<label><input type="checkbox" value="0" name="sceneType" checked="checked">住宅</label>-->
+        <!--<label><input type="checkbox" value="1" name="sceneType">商业</label>-->
+        <!--<label><input type="checkbox" value="2" name="sceneType">旅游</label>-->
+        <!--<label><input type="checkbox" value="3" name="sceneType">海外</label>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+  <!--<div class="form-group">-->
+    <!--<label class="col-sm-2 control-label">参考价格</label>-->
+    <!--<div class="col-sm-5">-->
+      <!--<input class="form-control" id="scenePrice" name="scenePrice" type="text" placeholder="参考价格"/>-->
+    <!--</div>-->
+  <!--</div>-->
+  <!--<div class="form-group">-->
+    <!--<label class="col-sm-2 control-label">咨询电话</label>-->
+    <!--<div class="col-sm-5">-->
+      <!--<input class="form-control" id="sceneTel" name="sceneTel"  type="text" placeholder="咨询电话"/>-->
+    <!--</div>-->
+  <!--</div>-->
+  <!--<div class="form-group">-->
+    <!--<label class="col-sm-2 control-label">在售户型</label>-->
+    <!--<div class="col-sm-5">-->
+      <!--<input class="form-control" id="sceneInSale" name="sceneInSale" type="text" placeholder="在售户型"/>-->
+    <!--</div>-->
+  <!--</div>-->
+  <!--<div class="form-group">-->
+    <!--<label class="col-sm-2 control-label">项目特色22</label>-->
+    <!--<div class="col-sm-5">-->
+      <!--<input class="form-control" id="sceneFeature" name="sceneFeature" type="text" placeholder="项目特色"/>-->
+    <!--</div>-->
+  <!--</div>-->
+  <div class="form-group">
+    <label class="col-sm-2 control-label">上传全景图</label>
+    <div class="col-sm-6">
+      <!--<input id="file-5" class="file" name="sceneImg"  type="file" multiple data-preview-file-type="any" data-upload-url="/sceneject/tImg" data-preview-file-icon="">-->
+      <input id="file-5" class="file" name="sceneImg"  multiple type="file" data-preview-file-type="any"
+             data-upload-url="/index.php/Home/Index/img" data-preview-file-icon="">
+    </div>
+  </div>
+</form>
+<script>
+  $(".file").fileinput({
+    language: "zh",
+    maxFileSize: 30240,
+    uploadUrl:'/index.php/Home/Index/img',
+    allowedFileExtensions: ["jpg","jpeg"],
+    uploadAsync: true,
+    showPreview: false,
+    allowedFileExtensions : ['jpg', 'jpeg'],
+    elErrorContainer: '#errorBlock'
+  });
+</script>

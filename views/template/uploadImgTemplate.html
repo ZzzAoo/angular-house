@@ -1,0 +1,110 @@
+ <!---->
+  <!--<div class="container" style="background: white;">-->
+    <!--<div class="testchildren"></div>-->
+    <!--&lt;!&ndash;<form enctype="multipart/form-data">&ndash;&gt;-->
+    <!--&lt;!&ndash;<div class="form-group">&ndash;&gt;-->
+    <!--&lt;!&ndash;<input id="file-5" class="file" type="file" multiple data-preview-file-type="any" data-upload-url="#" data-preview-file-icon="">&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+    <!--&lt;!&ndash;</form>&ndash;&gt;-->
+    <!--&lt;!&ndash;<form class="form-horizontal" role="form">&ndash;&gt;-->
+    <!--<form action="/index.php" class="form-horizontal"  method="post" onsubmit="return check();">-->
+      <!--&lt;!&ndash;<form action="/project/projectAdd" class="form-horizontal"  method="post">&ndash;&gt;-->
+
+      <!--<div class="form-group">-->
+        <!--<label class="col-md-2 control-label">上传全景图</label>-->
+        <!--<div class="col-md-8">-->
+          <!--&lt;!&ndash;<input id="file-5" class="file" name="proImg"  type="file" multiple data-preview-file-type="any" data-upload-url="/project/tImg" data-preview-file-icon="">&ndash;&gt;-->
+          <!--<input id="file-5" class="file" name="proImg"  multiple type="file" data-preview-file-type="any"-->
+                 <!--data-upload-url="/index.php/Home/Index/img" data-preview-file-icon="">-->
+        <!--</div>-->
+      <!--</div>-->
+      <!--<div class="form-group">-->
+        <!--<div class="center-block" style="display: flex;justify-content: center">-->
+          <!--<button type="submit"  class="btn btn-default col-md-1">添加</button>&nbsp;&nbsp;&nbsp;-->
+          <!--<button type="button" class="btn btn-default col-md-1">重置</button>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</form>-->
+
+
+<!--<script>-->
+  <!--$(".file").fileinput({-->
+    <!--language: "zh",-->
+    <!--maxFileSize: 30240,-->
+    <!--uploadUrl:'/index.php/Home/Index/img',-->
+    <!--allowedFileExtensions: ["jpg","jpeg"],-->
+    <!--uploadAsync: true-->
+  <!--});-->
+
+  <!--$(".file").on('fileuploaded', function(event, numFiles, label) {-->
+    <!--$('#projectId').val(numFiles.response);-->
+    <!--if(!$('#projectId').val()==null&&!$('#projectId').val()=='undefiend'){-->
+      <!--var url='';-->
+      <!--$.post('/index.php/Home/Index/index/projectId/'+$('#projectId').val()+'',function(data){-->
+      <!--},'jsonp');-->
+    <!--}-->
+  <!--});-->
+
+  <!--function check(){-->
+    <!--if ($('#projectId').val()==""||$('#projectId').val().length<0){-->
+      <!--alert("请先上传全景图");-->
+      <!--return false;-->
+    <!--}-->
+    <!--$(document).ready(function() {-->
+      <!--$(".file").fileinput({-->
+        <!--'showPreview' : false,-->
+        <!--'allowedFileExtensions' : ['jpg', 'jpeg'],-->
+        <!--'elErrorContainer': '#errorBlock'-->
+      <!--})-->
+    <!--})-->
+<!--</script>-->
+<!--</div>-->
+ <!--<div class="form-group">-->
+   <!--<label class="col-md-2 control-label">上传全景图</label>-->
+   <!--<div class="col-md-8">-->
+     <!--&lt;!&ndash;<input id="file-5" class="file" name="proImg"  type="file" multiple data-preview-file-type="any" data-upload-url="/project/tImg" data-preview-file-icon="">&ndash;&gt;-->
+     <!--<input id="file-5" class="file" name="proImg"  multiple type="file" data-preview-file-type="any"-->
+            <!--data-upload-url="/index.php/Home/Index/img" data-preview-file-icon="">-->
+   <!--</div>-->
+<!--</div>-->
+ <!--<p><a class="btn btn-lg btn-success pull-right" data-toggle="modal" data-target="#myModal" ng-href="#/modalproject">新增项目<span class="glyphicon glyphicon-plus"></span></a></p>-->
+ <!--<body ng-app="proApp">-->
+ <!--<p><a class="btn btn-lg btn-success pull-right" data-toggle="modal" data-target="#myModal"-->
+ <!--ng-click="modal='views/template/projectAddTemplate.html'">新增项目<span class="glyphicon glyphicon-plus"></span></a></p>-->
+ <body>
+
+ <!--<div class="form-group">-->
+   <!--<label class="col-md-2 control-label">上传全景图22</label>-->
+   <!--<div class="col-md-8">-->
+     <!--&lt;!&ndash;<input id="file-5" class="file" name="proImg"  type="file" multiple data-preview-file-type="any" data-upload-url="/project/tImg" data-preview-file-icon="">&ndash;&gt;-->
+     <!--&lt;!&ndash;<input id="file-5" class="file" name="proImg"  multiple type="file" data-preview-file-type="any"&ndash;&gt;-->
+     <!--&lt;!&ndash;data-preview-file-icon=""/>&ndash;&gt;-->
+     <!--<input id="input-700" name="kartik-input-700[]" type="file" multiple class="file-loading">-->
+     <!--<script>-->
+       <!--$("#input-700").fileinput({-->
+         <!--uploadUrl: "http://localhost/file-upload-single/1", // server upload action-->
+         <!--uploadAsync: true,-->
+         <!--maxFileCount: 5-->
+       <!--});-->
+     <!--</script>-->
+   <!--</div>-->
+ <!--</div>-->
+
+ <!--<script>-->
+ <!--$(function () {-->
+ <!--$(".file").fileinput({-->
+ <!--language: "zh",-->
+ <!--maxFileSize: 30240,-->
+ <!--uploadUrl:'/index.php/Home/Index/img',-->
+ <!--allowedFileExtensions: ["jpg","jpeg"],-->
+ <!--uploadAsync: true,-->
+ <!--showPreview: false,-->
+ <!--allowedFileExtensions : ['jpg', 'jpeg'],-->
+ <!--elErrorContainer: '#errorBlock'-->
+ <!--});-->
+
+ <!--});-->
+ <!--</script>-->
+ </body>
+
+ <!--</body>-->
