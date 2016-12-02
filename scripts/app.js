@@ -52,22 +52,23 @@ angular
                         templateUrl:'views/projectIndex.html',
                         controller:'projectIndex'
                     }
-                },
-                resolve: {
-                    loadMyCtrl: ['$ocLazyLoad', function($ocLazyLoad) {
-                        return $ocLazyLoad.load({
-                            name: 'yoAngularApp',
-                            cache : false,
-                            files: [
-                                './styles/fileinput.css'
-                                // './public/jquery/dist/jquery.js',
-                                //'../bower_components/datatables/media/js/dataTables.bootstrap.js',
-                                // 'scripts/test/resolve.js',
-                                // 'public/resources/fileinput.js'
-                            ]
-                        });
-                    }]
                 }
+                // ,
+                // resolve: {
+                //     loadMyCtrl: ['$ocLazyLoad', function($ocLazyLoad) {
+                //         return $ocLazyLoad.load({
+                //             name: 'yoAngularApp',
+                //             cache : false,
+                //             files: [
+                //                 // './styles/fileinput.css',
+                //                 // './components/resources/jquery2.24.js',
+                //                 // //'../bower_components/datatables/media/js/dataTables.bootstrap.js',
+                //                 // // 'scripts/test/resolve.js',
+                //                 // './components/resources/fileinput.js'
+                //             ]
+                //         });
+                //     }]
+                // }
             })
             .state('test',{
                 url:'/test',

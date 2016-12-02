@@ -1,11 +1,11 @@
 <!--<p><a class="btn btn-lg btn-success pull-right" data-toggle="modal" data-target="#myModal" ng-href="#/modalproject">新增项目<span class="glyphicon glyphicon-plus"></span></a></p>-->
 <!--<body ng-app="proApp">-->
 <!--<p><a class="btn btn-lg btn-success pull-right" data-toggle="modal" data-target="#myModal"-->
-      <!--ng-click="modal='views/template/projectAddTemplate.html'">新增项目<span class="glyphicon glyphicon-plus"></span></a></p>-->
-<body>
-<p><a class="btn btn-lg btn-success pull-right" data-toggle="modal" data-target="#myModal"
-      ng-click="modal='views/template/projectAddTemplate.html'">新增项目<span class="glyphicon glyphicon-plus"></span></a></p>
+<!--ng-click="modal='views/template/projectAddTemplate.html'">新增项目<span class="glyphicon glyphicon-plus"></span></a></p>-->
 <!--<a class="btn btn-default pull-right" href="projectAdd.html">新增项目</a>-->
+<p><a class="btn btn-md btn-success pull-right" data-toggle="modal" data-target="#managerModal"
+      ng-click="managerModal='views/template/projectAddTemplate.html'">新增项目<span
+        class="glyphicon glyphicon-plus"></span></a></p>
 <table class="table table-striped">
     <thead>
     <tr>
@@ -21,78 +21,64 @@
     </thead>
     <tbody>
     <tr ng-repeat="project in project">
-        <td ng-hide="true">{{project.proid}} </td>
+        <td ng-hide="true">{{project.proid}}</td>
         <td>{{project.proname}}</td>
         <td>{{project.procity}}</td>
-        <td>{{project.proarea}} </td>
-        <td>{{project.proinsale}} </td>
-        <td>{{project.prostate}} </td>
-        <td>{{project.proprice}} </td>
-        <td>{{project.proimg}} </td>
+        <td>{{project.proarea}}</td>
+        <td>{{project.proinsale}}</td>
+        <td>{{project.prostate}}</td>
+        <td>{{project.proprice}}</td>
+        <td>{{project.proimg}}</td>
         <td class="do">
-          <!--<a href="#">编辑</a><a href="#"></a><a href="#"></a><a href="/project/operation/delete/{{project.proId}}">删除</a>-->
-          <a class="btn btn-sm btn-success" data-toggle="modal" data-target="#myModal">管理</a>
-          <!--<a class="btn btn-sm btn-success" data-toggle="modal" data-target="#myModal">管理</a>-->
-          <a class="btn btn-sm btn-success" data-toggle="modal" data-target="#myModal">预览</a>
+            <a class="btn btn-sm btn-success" data-toggle="modal" data-target="#managerModal"
+               ng-click="managerModal='views/template/projectAddTemplate.html'">管理</a>
+            <a class="btn btn-sm btn-success" data-toggle="modal" data-target="#modal"
+               ng-click="modal='.././views/template/loginTemplate.html'">预览</a>
+        </td>
+        <td>
+            <div class="modal fade" id="managerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                 aria-hidden="false">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×
+                            </button>
+                            <h4 class="modal-title" id="myModalLabel1">
+                                项目管理
+                            </h4>
+                        </div>
+                        <div class="modal-body" style="padding-left: 30px;">
+                            <!--<div ng-include='modal' scope="" onload=""></div>-->
+                            <div ng-include="managerModal" scope="" onload=""></div>
+                        </div>
+                        <div class="modal-footer ">
+                            <button type="button" class="btn btn-primary">添加
+                            </button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">取消
+                            </button>
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
         </td>
     </tr>
+
     </tbody>
 </table>
-<div class="form-group">
-    <label class="col-md-2 control-label">上传全景图22</label>
-    <div class="col-md-8">
-        <!--<input id="file-5" class="file" name="proImg"  type="file" multiple data-preview-file-type="any" data-upload-url="/project/tImg" data-preview-file-icon="">-->
-        <!--<input id="file-5" class="file" name="proImg"  multiple type="file" data-preview-file-type="any"-->
-                <!--data-preview-file-icon=""/>-->
-        <input id="input-700" name="kartik-input-700[]" type="file" multiple class="file-loading">
-        <script>
-            $("#input-700").fileinput({
-                uploadUrl: "http://localhost/file-upload-single/1", // server upload action
-                uploadAsync: true,
-                maxFileCount: 5
-            });
-        </script>
-    </div>
-</div>
-
-<!--<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">-->
-  <!--<div class="modal-dialog modal-lg">-->
-    <!--<div class="modal-content">-->
-      <!--<div class="modal-header">-->
-        <!--<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×-->
-        <!--</button>-->
-        <!--<h4 class="modal-title" id="myModalLabel">-->
-          <!--项目管理-->
-        <!--</h4>-->
-      <!--</div>-->
-      <!--<div class="modal-body" style="padding-left: 30px;">-->
-        <!--&lt;!&ndash;<div ng-include='modal' scope="" onload=""></div>&ndash;&gt;-->
-        <!--<div ng-include="modal" scope="" onload=""></div>-->
-      <!--</div>-->
-      <!--<div class="modal-footer ">-->
-        <!--<button type="button" class="btn btn-primary">添加-->
-        <!--</button>-->
-        <!--<button type="button" class="btn btn-default" data-dismiss="modal">取消-->
-        <!--</button>-->
-      <!--</div>-->
-    <!--</div>&lt;!&ndash; /.modal-content &ndash;&gt;-->
-  <!--</div>&lt;!&ndash; /.modal-dialog &ndash;&gt;-->
-<!--</div>&lt;!&ndash; /.modal &ndash;&gt;-->
+<!--<div class="form-group">-->
+<!--<label class="col-md-2 control-label">上传全景图22</label>-->
+<!--<div class="col-md-8">-->
+<!--&lt;!&ndash;<input id="file-5" class="file" name="proImg"  type="file" multiple data-preview-file-type="any" data-upload-url="/project/tImg" data-preview-file-icon="">&ndash;&gt;-->
+<!--&lt;!&ndash;<input id="file-5" class="file" name="proImg"  multiple type="file" data-preview-file-type="any"&ndash;&gt;-->
+<!--&lt;!&ndash;data-preview-file-icon=""/>&ndash;&gt;-->
+<!--<input id="input-700" name="kartik-input-700[]" type="file" multiple class="file-loading">-->
 <!--<script>-->
-    <!--$(function () {-->
-        <!--$(".file").fileinput({-->
-            <!--language: "zh",-->
-            <!--maxFileSize: 30240,-->
-            <!--uploadUrl:'/index.php/Home/Index/img',-->
-            <!--allowedFileExtensions: ["jpg","jpeg"],-->
-            <!--uploadAsync: true,-->
-            <!--showPreview: false,-->
-            <!--allowedFileExtensions : ['jpg', 'jpeg'],-->
-            <!--elErrorContainer: '#errorBlock'-->
-        <!--});-->
-
-    <!--});-->
+<!--$("#input-700").fileinput({-->
+<!--uploadUrl: "http://localhost/file-upload-single/1", // server upload action-->
+<!--uploadAsync: true,-->
+<!--maxFileCount: 5-->
+<!--});-->
 <!--</script>-->
-</body>
+<!--</div>-->
+<!--</div>-->
 
-<!--</body>-->
